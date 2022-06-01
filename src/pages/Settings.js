@@ -71,6 +71,7 @@ const Settings = () => {
     }
 
     if (theFile) {
+      
       const data = theFile;
       const file = new Moralis.File(data.name, data);
       await file.saveIPFS();
