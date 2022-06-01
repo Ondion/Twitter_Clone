@@ -4,6 +4,7 @@ import spaceshooter from "../images/spaceshooter.jpeg";
 import netflix from "../images/netflix.jpeg";
 import academy from "../images/academy.png";
 import youtube from "../images/youtube.png";
+import { Input } from "web3uikit";
 import js from "../images/js.png";
 
 
@@ -38,6 +39,26 @@ const Rightbar = () => {
 
   return (
     <>
+      <div className="rightbarContent">
+        <Input
+          label="Search Twitter"
+          name="Search Twitter"
+          prefixIcon="search"
+          labelBgColor="#141d26"
+        >
+        </Input>
+        <div className="trends">
+          Trends
+          {trends.map((e, i) => {
+            return (
+              <div id={i} className="trend" onClick={() => window.open(e.link)}>
+                <img src={e.img} alt={e.img} className="trendImg"></img>
+                <div className="trendText">{e.text}</div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
     </>
   );
 };
